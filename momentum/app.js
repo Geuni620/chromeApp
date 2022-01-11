@@ -1,5 +1,10 @@
-const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"];
+const player = {
+  name: "geuni",
+  points: 31,
+  handsome: true,
+};
 
-// “일주일에 홀 수 요일만 출력해줘”
-const daysOfWeekOdd = daysOfWeek.filter((length) => index % 2 === 0);
-console.log(daysOfWeekOdd);
+//object 값 추가하기
+player.fat = "little bit";
+
+console.log(player);
