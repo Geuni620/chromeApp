@@ -1,10 +1,9 @@
 const player = {
   name: "geuni",
-  points: 31,
-  handsome: true,
+  sayHello: function (otherPersonsName) {
+    console.log("Hello! " + otherPersonsName);
+  },
 };
 
-//object 값 추가하기
-player.fat = "little bit";
-
-console.log(player);
+console.log(player.name);
+player.sayHello("jihye");
