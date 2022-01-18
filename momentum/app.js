@@ -6,17 +6,13 @@ const inputRangeNumber = document.querySelector(".inputRangeNumber");
 const formGuessNumber = document.querySelector(".formGuessNumber");
 const inputGuessNumber = document.querySelector(".inputGuessNumber");
 
-function rangeHandleSubmit(event) {
-  event.preventDefault();
-  const rangeNumber = inputRangeNumber.value;
-  console.log(rangeNumber);
-}
-
 function guessHandleSubmit(event) {
   event.preventDefault();
+  const rangeNumber = inputRangeNumber.value;
   const guessNumber = inputGuessNumber.value;
-  console.log(guessNumber);
+  const test = Math.floor(Math.random() * rangeNumber);
 }
 
-formRangeNumber.addEventListener("submit", rangeHandleSubmit);
 formGuessNumber.addEventListener("submit", guessHandleSubmit);
+
+//number random create
