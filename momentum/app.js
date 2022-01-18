@@ -1,30 +1,22 @@
-const loginForm = document.querySelector("#login-form");
-const loginInput = document.querySelector("#login-form input");
-const greeting = document.querySelector("#greeting");
+//get range number
+const formRangeNumber = document.querySelector(".formRangeNumber");
+const inputRangeNumber = document.querySelector(".inputRangeNumber");
 
-const HIDDEN_CLASSNAME = "hidden";
-const USERNAME_KEY = "username";
+//get guess number
+const formGuessNumber = document.querySelector(".formGuessNumber");
+const inputGuessNumber = document.querySelector(".inputGuessNumber");
 
-function onLoginSubmit(event) {
+function rangeHandleSubmit(event) {
   event.preventDefault();
-  loginForm.classList.add(HIDDEN_CLASSNAME);
-  localStorage.setItem(USERNAME_KEY, username);
-  paintGreetings();
+  const rangeNumber = inputRangeNumber.value;
+  console.log(rangeNumber);
 }
 
-//중복된 greeting를 function으로 묶음
-function paintGreetings() {
-  const username = localStorage.getItem(USERNAME_KEY);
-  greeting.innerText = `Hello + ${username}`;
-  greeting.classList.remove(HIDDEN_CLASSNAME);
+function guessHandleSubmit(event) {
+  event.preventDefault();
+  const guessNumber = inputGuessNumber.value;
+  console.log(guessNumber);
 }
 
-//username 정보가 있는지 확인하기
-const savedUsername = localStorage.getItem(USERNAME_KEY);
-
-if (savedUsername === null) {
-  loginForm.classList.remove(HIDDEN_CLASSNAME);
-  loginForm.addEventListener("submit", onLoginSubmit);
-} else {
-  paintGreetings();
-}
+formRangeNumber.addEventListener("submit", rangeHandleSubmit);
+formGuessNumber.addEventListener("submit", guessHandleSubmit);
