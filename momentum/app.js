@@ -6,13 +6,25 @@ const inputRangeNumber = document.querySelector(".inputRangeNumber");
 const formGuessNumber = document.querySelector(".formGuessNumber");
 const inputGuessNumber = document.querySelector(".inputGuessNumber");
 
+//get Text
+const choseResultText = document.getElementById("choseResult");
+const randomResultText = document.getElementById("randomResult");
+const resultResult = document.getElementById("resultResult");
+
 function guessHandleSubmit(event) {
   event.preventDefault();
   const rangeNumber = inputRangeNumber.value;
   const guessNumber = inputGuessNumber.value;
-  const test = Math.floor(Math.random() * rangeNumber);
+  const randonNumber = Math.floor(Math.random() * rangeNumber);
+
+  choseResultText.innerText = `You chose ${guessNumber}`;
+  randomResultText.innerText = `The machine chose ${randonNumber}`;
+
+  if (guessNumber === randonNumber) {
+    resultResult.innerText = "You win!";
+  } else {
+    resultResult.innerText = "You Lose!";
+  }
 }
 
 formGuessNumber.addEventListener("submit", guessHandleSubmit);
-
-//number random create
