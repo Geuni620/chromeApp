@@ -14,8 +14,8 @@ const resultResult = document.getElementById("resultResult");
 function guessHandleSubmit(event) {
   event.preventDefault();
   const rangeNumber = inputRangeNumber.value;
-  const guessNumber = inputGuessNumber.value;
-  const randonNumber = Math.floor(Math.random() * rangeNumber);
+  const guessNumber = parseInt(inputGuessNumber.value);
+  const randonNumber = Math.ceil(Math.random() * rangeNumber);
 
   choseResultText.innerText = `You chose ${guessNumber}`;
   randomResultText.innerText = `The machine chose ${randonNumber}`;
