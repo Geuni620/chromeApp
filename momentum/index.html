@@ -4,23 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Momentum App</title>
   </head>
   <body>
-    <h1>Random Number Game</h1>
-    <h2>Generate a number between 0 and</h2>
-    <form class="formRangeNumber">
-      <input class="inputRangeNumber" type="number" min="0" />
+    <form id="login-form" class="hidden">
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="What is your name?"
+      />
+      <button>Log In</button>
     </form>
-    <h3>Guess the number</h3>
-    <form class="formGuessNumber">
-      <input class="inputGuessNumber" type="number" min="0" />
-      <button>PLAY!</button>
-      <h4 id="choseResult"></h4>
-      <h4 id="randomResult"></h4>
-      <h4 id="resultResult"></h4>
-    </form>
-    <script src="app.js"></script>
+    <h1 id="greeting" class="hidden"></h1>
+    <h2 id="clock">00:00:00</h2>
+    <script src="js/greeting.js"></script>
+    <script src="js/clock.js"></script>
   </body>
 </html>
