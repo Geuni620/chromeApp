@@ -4,10 +4,10 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
 
-const toDos = [];
+let toDos = [];
 
 function saveToDos() {
-  localStorage.setItem(TODOS_KEY, toDos);
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 function deleteToDo(event) {
@@ -41,14 +41,10 @@ function handleToDoSubmit(event) {
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
-function sayHello() {
-  console.log("hello");
-}
-
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
-console.log(savedToDos);
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
-  console.log(parsedToDos);
+  toDos = parsedToDos;
+  parsedToDos.forEach(paintTodo);
 }
