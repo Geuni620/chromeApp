@@ -5,7 +5,7 @@ function onGeoOk(position) {
   const log = position.coords.longitude;
   console.log("You live in", lat, log);
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${log}&appid=${API_KEY}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${log}&appid=${API_KEY}&units=metric`;
   console.log(url);
   fetch(url)
     .then((response) => response.json())
@@ -14,7 +14,7 @@ function onGeoOk(position) {
       const weather = document.querySelector(".weather span");
 
       city.innerText = data.name;
-      weather.innerText = data.weather[0].main;
+      weather.innerText = `${data.weather[0].main} / ${data.main.temp}℃`;
     });
 }
 
