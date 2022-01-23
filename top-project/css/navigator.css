@@ -1,0 +1,43 @@
+/* navigator */
+.navigator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 4% 0px;
+  font-size: var(--font-small);
+  color: white;
+  font-weight: 400;
+}
+
+/* location / weather */
+#weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1em;
+}
+
+.site-name {
+  font-size: 1.2em;
+}
+
+.weather i {
+  margin: 3px;
+}
+
+.location span {
+  margin-left: 5px;
+}
+
+.weather span {
+  margin-left: 5px;
+}
+
+.time {
+  font-size: var(--font-medium-small);
+}
+
+.hidden {
+  display: none;
+}

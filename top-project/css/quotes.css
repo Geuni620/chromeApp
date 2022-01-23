@@ -1,0 +1,12 @@
+/* quotes */
+.quote {
+  width: 90%;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  color: white;
+  text-align: center;
+  font-size: 0.8em;
+  line-height: 2em;
+}
